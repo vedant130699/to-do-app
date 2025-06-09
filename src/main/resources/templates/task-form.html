@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Do app</title>
+</head>
+<body>
+<h1>
+    Add a new task
+</h1>
+<form th:action="@{/tasks}" th:object="${todo}" method="POST">
+    <input type="text" th:field="*{description}" placeholder="Task description"/>
+    <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red"></div>
+    <br>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

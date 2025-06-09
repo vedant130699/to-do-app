@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Do app</title>
+</head>
+<body>
+<h1>
+    List tasks
+</h1>
+<a th:href="@{/tasks/new}">Add Task</a>
+<ul>
+    <li th:each="todo : ${todos}">
+        <span th:text="${todo.description}"></span>
+    </li>
+</ul>
+
+</body>
+</html>
