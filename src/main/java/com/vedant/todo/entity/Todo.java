@@ -14,7 +14,7 @@ import lombok.Data;
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @NotBlank(message = "Description should not be empty")
     private String description;
 }
