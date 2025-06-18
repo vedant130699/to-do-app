@@ -10,10 +10,11 @@
     Add a new task
 </h1>
 <form th:action="@{/tasks}" th:object="${todo}" method="POST">
+    <input type="hidden" th:field="*{id}" />
     <input type="text" th:field="*{description}" placeholder="Task description"/>
     <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red"></div>
     <br>
-    <button type="submit">Save</button>
+    <button type="submit" th:text="${todo.id} != null ? 'Update' : 'Save'">Save</button>
 </form>
 
 </body>
