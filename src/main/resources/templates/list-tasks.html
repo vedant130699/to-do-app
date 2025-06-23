@@ -19,6 +19,7 @@
         <a th:href="@{'/tasks/edit/' + ${todo.id}}">Edit</a>
         <a th:href="@{'/tasks/delete/' + ${todo.id}}">Delete</a>
         <p>Created At: <span th:text="${#temporals.format(todo.createdAt, 'dd MMM yyyy HH:mm')}"></span></p>
+        <p>Updated At: <span th:text="${#temporals.format(todo.updatedAt, 'dd MMM yyyy HH:mm')}"></span></p>
     </li>
 </ul>
 
